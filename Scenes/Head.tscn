@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://wd5ajq24lpb7"]
+
+[ext_resource type="Script" uid="uid://k83er04h8vjn" path="res://Scripts/head-generator.gd" id="1_6hh0n"]
+[ext_resource type="Texture2D" uid="uid://cimqbl424yyf6" path="res://Assets/head.png" id="1_u7sq7"]
+[ext_resource type="PackedScene" uid="uid://bt1t2gt4cgmn5" path="res://Scenes/Eyes.tscn" id="2_oo67o"]
+[ext_resource type="Texture2D" uid="uid://h10l4qajtmxa" path="res://Assets/face.png" id="2_qrvof"]
+[ext_resource type="PackedScene" uid="uid://dvlfreyrnv1w4" path="res://Scenes/Mouths.tscn" id="3_kk1lw"]
+
+[node name="Head" type="Node2D" unique_id=869240767]
+script = ExtResource("1_6hh0n")
+
+[node name="Skin" type="Sprite2D" parent="." unique_id=1245000514]
+texture = ExtResource("2_qrvof")
+centered = false
+
+[node name="HeadOutline" type="Sprite2D" parent="." unique_id=2031435335]
+texture = ExtResource("1_u7sq7")
+centered = false
+
+[node name="Eyes" parent="." unique_id=257645778 instance=ExtResource("2_oo67o")]
+position = Vector2(0, -4.85)
+
+[node name="Mouths" parent="." unique_id=833573938 instance=ExtResource("3_kk1lw")]
