@@ -27,11 +27,13 @@ func _ready():
 	
 	update_slider_positions()
 
-func _on_mouths_slider_value_changed(value):
-	$"../Head/Mouths/AnimatedSprite2D".set_frame_and_progress($MouthsSlider.value, 0)
-
+func _on_mouths_slider_value_changed(value): 
+	HEAD.mouth_choice = $MouthsSlider.value
+	HEAD.update_head()
+	
 func _on_eyes_slider_value_changed(value):
-	$"../Head/Eyes/AnimatedSprite2D".set_frame_and_progress($EyesSlider.value, 0)
+	HEAD.eye_choice = $EyesSlider.value
+	HEAD.update_head()
 
 func _on_randomise_btn_button_down():
 	$"../Head".random_generate()
