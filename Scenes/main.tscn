@@ -11,7 +11,7 @@ script = ExtResource("1_jjgbg")
 position = Vector2(48, 34)
 
 [node name="UI" type="Node2D" parent="." unique_id=684410737]
-position = Vector2(564, 151)
+position = Vector2(553, 155)
 script = ExtResource("3_8gbba")
 
 [node name="SubViewport" type="SubViewport" parent="UI" unique_id=819833213]

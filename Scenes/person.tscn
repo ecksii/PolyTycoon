@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://l1h12pdysklf"]
+
+[ext_resource type="PackedScene" uid="uid://wd5ajq24lpb7" path="res://Scenes/Head.tscn" id="1_10xcd"]
+[ext_resource type="Texture2D" uid="uid://dk5ghgwsjnhq4" path="res://Assets/body-test.png" id="1_74dau"]
+
+[node name="Person" type="Node2D" unique_id=1786162585]
+
+[node name="Body" type="Polygon2D" parent="." unique_id=994710511]
+position = Vector2(-124, 54)
+texture = ExtResource("1_74dau")
+polygon = PackedVector2Array(255, 58, 102.66211, 519.4485, 426.6139, 519.4485)
+uv = PackedVector2Array(254.35376, -59.036896, 102.66211, 519.4485, 426.6139, 519.4485)
+polygons = [PackedInt32Array(0, 1, 2)]
+
+[node name="Head" parent="." unique_id=869240767 instance=ExtResource("1_10xcd")]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=2139826789]
+
+[node name="Body" type="Bone2D" parent="Skeleton2D" unique_id=959766610]
+position = Vector2(135, 550.99994)
+rotation = -1.5707964
+auto_calculate_length_and_angle = false
+length = 290.836
+bone_angle = 0.0
+
+[node name="Head" type="Bone2D" parent="Skeleton2D/Body" unique_id=1431256897]
+position = Vector2(314.99994, -2.9999862)
