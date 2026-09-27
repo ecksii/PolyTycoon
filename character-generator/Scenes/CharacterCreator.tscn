@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://bwd0377s3lt4h"]
 
-[ext_resource type="Script" uid="uid://buc1m0xvugkay" path="res://Scripts/main.gd" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://wd5ajq24lpb7" path="res://Scenes/Head.tscn" id="2_bo1nx"]
-[ext_resource type="Script" uid="uid://diwo708gmt0ok" path="res://Scripts/select_features_ui.gd" id="3_8gbba"]
+[ext_resource type="Script" uid="uid://buc1m0xvugkay" path="res://Scripts/main.gd" id="1_ms1e4"]
+[ext_resource type="PackedScene" uid="uid://wd5ajq24lpb7" path="res://Scenes/Head.tscn" id="2_4w703"]
+[ext_resource type="Script" uid="uid://diwo708gmt0ok" path="res://Scripts/select_features_ui.gd" id="3_vdfn6"]
 
 [node name="BaseNode2D" type="Node2D" unique_id=1717297737]
-script = ExtResource("1_jjgbg")
+script = ExtResource("1_ms1e4")
 
-[node name="Head" parent="." unique_id=869240767 instance=ExtResource("2_bo1nx")]
+[node name="Head" parent="." unique_id=869240767 instance=ExtResource("2_4w703")]
 position = Vector2(133, 153)
 
 [node name="UI" type="Node2D" parent="." unique_id=684410737]
 position = Vector2(553, 155)
-script = ExtResource("3_8gbba")
+script = ExtResource("3_vdfn6")
 
 [node name="ExportAvatar" type="Button" parent="UI" unique_id=85185828]
 offset_left = 86.0
@@ -57,9 +57,17 @@ offset_right = 700.0
 offset_bottom = 479.0
 edit_alpha = false
 
+[node name="ChangeSceneBtn" type="Button" parent="UI" unique_id=1059514048]
+offset_left = -490.0
+offset_top = 432.0
+offset_right = -365.0
+offset_bottom = 502.0
+text = "Go to app"
+
 [connection signal="pressed" from="UI/ExportAvatar" to="UI" method="_on_export_avatar_pressed"]
 [connection signal="value_changed" from="UI/EyesSlider" to="UI" method="_on_eyes_slider_value_changed"]
 [connection signal="value_changed" from="UI/MouthsSlider" to="UI" method="_on_mouths_slider_value_changed"]
 [connection signal="value_changed" from="UI/HairSlider" to="UI" method="_on_hair_slider_value_changed"]
 [connection signal="button_down" from="UI/RandomiseBtn" to="UI" method="_on_randomise_btn_button_down"]
 [connection signal="color_changed" from="UI/SkinColorPicker" to="UI" method="_on_skin_color_picker_color_changed"]
+[connection signal="pressed" from="UI/ChangeSceneBtn" to="UI" method="_on_change_scene_btn_pressed"]

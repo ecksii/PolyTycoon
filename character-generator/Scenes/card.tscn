@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bhbr7ej7dabq3"]
+
+[ext_resource type="Texture2D" uid="uid://drmicocm6mmgj" path="res://Assets/card-rough.png" id="1_0qqmn"]
+[ext_resource type="Script" uid="uid://dw0kvfix4awbs" path="res://Scripts/card.gd" id="1_wf8id"]
+[ext_resource type="PackedScene" uid="uid://wd5ajq24lpb7" path="res://Scenes/Head.tscn" id="3_brehn"]
+
+[node name="Card" type="Control" unique_id=26840451]
+custom_minimum_size = Vector2(354, 536)
+layout_mode = 3
+anchor_right = 0.25100002
+anchor_bottom = 0.68
+offset_left = -4.7800007
+offset_right = 0.39996338
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_wf8id")
+
+[node name="ProfileContainer" type="VBoxContainer" parent="." unique_id=1252967866]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 401.78
+offset_bottom = 608.0
+
+[node name="Profile" type="Sprite2D" parent="ProfileContainer" unique_id=1332054671]
+scale = Vector2(0.3177237, 0.3177237)
+texture = ExtResource("1_0qqmn")
+centered = false
+
+[node name="NameContainer" type="MarginContainer" parent="." unique_id=2034005679]
+layout_mode = 0
+offset_left = 62.78
+offset_top = 30.0
+offset_right = 329.78
+offset_bottom = 79.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NameContainer" unique_id=1839128848]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "THIS IS A NAME"
+
+[node name="PPContainer" type="MarginContainer" parent="." unique_id=751889810]
+clip_children = 1
+layout_mode = 0
+offset_left = 23.78
+offset_top = 112.0
+offset_right = 375.78
+offset_bottom = 429.00003
+
+[node name="Head" parent="PPContainer" unique_id=869240767 instance=ExtResource("3_brehn")]
+position = Vector2(45, 48)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

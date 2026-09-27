@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://yxpxmdc8uari"]
+
+[ext_resource type="PackedScene" uid="uid://bhbr7ej7dabq3" path="res://Scenes/card.tscn" id="1_nmq3k"]
+[ext_resource type="Texture2D" uid="uid://g75qladnte80" path="res://icon.svg" id="1_sb7qb"]
+
+[node name="App" type="Control" unique_id=1283306680]
+layout_mode = 3
+anchor_right = 0.33800003
+anchor_bottom = 0.94500005
+offset_right = 1.2799988
+offset_bottom = 0.49499512
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1373121753]
+clip_children = 2
+layout_mode = 0
+offset_right = 522.0
+offset_bottom = 800.0
+texture = ExtResource("1_sb7qb")
+
+[node name="CardContainer" type="MarginContainer" parent="TextureRect" unique_id=63732386]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 72.0
+offset_right = 461.0
+offset_bottom = 681.0
+
+[node name="Card" parent="TextureRect/CardContainer" unique_id=1093341755 instance=ExtResource("1_nmq3k")]
+layout_mode = 2

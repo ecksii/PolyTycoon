@@ -56,13 +56,5 @@ func _on_export_avatar_pressed():
 	#$TestVP.get_texture().get_image().save_png("screenshot.png")
 	
 
-
-
-
-
-
-
-
-
-
-#end	
+func _on_change_scene_btn_pressed():
+	get_tree().change_scene_to_file("res://Scenes/app.tscn")
