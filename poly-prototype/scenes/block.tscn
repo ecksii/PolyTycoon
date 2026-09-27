@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://denihrdabifc4"]
+
+[ext_resource type="Script" uid="uid://cgdpjrj3ql30a" path="res://block.gd" id="1_im0tn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6uw31"]
+size = Vector2(79.5, 64)
+
+[node name="block" type="Area2D" unique_id=1368257940]
+script = ExtResource("1_im0tn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1706150295]
+offset_left = -40.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 32.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=478466426]
+shape = SubResource("RectangleShape2D_6uw31")

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bc3g6pfx3kxau"]
+
+[ext_resource type="Script" uid="uid://tgln8gprf302" path="res://scripts/phone_ui.gd" id="1_tghvi"]
+[ext_resource type="PackedScene" uid="uid://dbx7q56xq7r2j" path="res://scenes/dating_app.tscn" id="2_hahit"]
+
+[node name="PhoneUI" type="Control" unique_id=1809952798]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tghvi")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=1898065669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.23921569)
+
+[node name="Case" type="Panel" parent="." unique_id=1356904923]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -320.0
+offset_right = 180.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Case" unique_id=591827107]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -315.0
+offset_right = 175.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03137255, 1, 1, 1)
+
+[node name="Screen" type="VBoxContainer" parent="Case" unique_id=1666960898]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Case/Screen" unique_id=155795510]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Home"
+
+[node name="DatingAppSelect" type="Button" parent="Case/Screen" unique_id=465306901]
+layout_mode = 2
+text = "Dating App"
+
+[node name="ClosePhone" type="Button" parent="Case/Screen" unique_id=1553214835]
+layout_mode = 2
+text = "Close"
+
+[node name="DatingApp" parent="Case" unique_id=2047041957 instance=ExtResource("2_hahit")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+
+[connection signal="gui_input" from="Backdrop" to="." method="_on_backdrop_gui_input"]
+[connection signal="pressed" from="Case/Screen/DatingAppSelect" to="." method="_on_dating_app_pressed"]
+[connection signal="pressed" from="Case/Screen/ClosePhone" to="." method="_on_close_phone_pressed"]
+[connection signal="back_pressed" from="Case/DatingApp" to="." method="_on_dating_app_back_pressed"]

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dbx7q56xq7r2j"]
+
+[ext_resource type="Script" uid="uid://cbb3r2rxrbibs" path="res://scripts/dating_app.gd" id="1_xk3q3"]
+
+[node name="DatingApp" type="VBoxContainer" unique_id=2047041957]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xk3q3")
+
+[node name="AppName" type="Label" parent="." unique_id=1051414305]
+layout_mode = 2
+text = "Cupid's Hingey Tinder to Grind On"
+horizontal_alignment = 1
+
+[node name="Profile" type="Panel" parent="." unique_id=1552038629]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NameLabel" type="Label" parent="Profile" unique_id=1834681480]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MatchConfirm" type="Label" parent="." unique_id=1737452943]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="SwipeButton" type="Button" parent="." unique_id=1601412531]
+layout_mode = 2
+text = "Swipe Right"
+
+[node name="BackButton" type="Button" parent="." unique_id=2076836324]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="SwipeButton" to="." method="_on_swipe_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

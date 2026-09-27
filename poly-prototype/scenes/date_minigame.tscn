@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://boatt63sl0rro"]
+
+[ext_resource type="Script" uid="uid://04arpklq3epb" path="res://scripts/date_minigame.gd" id="1_d30w5"]
+
+[node name="DateMinigame" type="Node2D" unique_id=2105921155]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_d30w5")
+
+[node name="spawnTimer" type="Timer" parent="." unique_id=2065595466]
+autostart = true
+
+[node name="score" type="Label" parent="." unique_id=1899939505]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="EnemyHealthBar" type="ProgressBar" parent="." unique_id=250411144]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 380.0
+offset_right = 640.0
+offset_bottom = 27.0
+grow_horizontal = 2
+value = 100.0
+show_percentage = false
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="." unique_id=17985626]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 380.0
+offset_top = 933.333
+offset_right = 640.0
+offset_bottom = 960.333
+grow_horizontal = 2
+value = 100.0
+show_percentage = false
